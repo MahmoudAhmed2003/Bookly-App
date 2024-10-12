@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/bookDetails/presention/view/bookDetailsSCreen.dart';
 import 'package:bookly_app/features/splash/presentation/viewModel/splashScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class BooklyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Color(0xff100B20),
       ),
-      home: SplashScreen(),
+      home: Bookdetailsscreen(),
         
     );
   }
