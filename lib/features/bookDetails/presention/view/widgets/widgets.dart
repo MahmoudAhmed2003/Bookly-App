@@ -21,3 +21,66 @@ class CustomBookDetailsAppbar extends StatelessWidget {
     );
   }
 }
+class bookPreviewButton extends StatelessWidget {
+  const bookPreviewButton({
+    super.key,
+  });
+
+
+  @override
+  Widget build(BuildContext context) {
+      final double w = MediaQuery.of(context).size.width;
+
+    return SizedBox(
+      width: w * 0.7,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Expanded(
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(8.0),
+                    bottomLeft: Radius.circular(8.0),
+                  ),
+                ),
+              ),
+              child: const Text(
+                '19.99€',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xffEF8262),
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(8.0),
+                    bottomRight: Radius.circular(8.0),
+                  ),
+                ),
+              ),
+              child: const Text(
+                'Free preview',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+

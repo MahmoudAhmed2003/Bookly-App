@@ -35,6 +35,7 @@ class Homescreen extends StatelessWidget {
                         },
                       ),
                     ),
+                  
                     const SizedBox(height: 40),
                     const Text('Best Sellers',
                         style: TextStyle(
