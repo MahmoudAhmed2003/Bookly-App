@@ -108,7 +108,6 @@ class BookRating extends StatelessWidget {
     );
   }
 }
-
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
 
