@@ -1,28 +1,9 @@
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/bookRating.dart';
-import 'package:bookly_app/core/utils/customBookPic.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class HomePageRecentListItem extends StatelessWidget {
-  const HomePageRecentListItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final h = MediaQuery.of(context).size.height;
-    final w = MediaQuery.of(context).size.width;
-    return SizedBox(
-      // color: Colors.white,
-      width: w * 0.3,
-      child: BookPic(),
-    );
-  }
-}
-
-
-
-class HomePageBestSellerLIstItem extends StatelessWidget {
-  const HomePageBestSellerLIstItem({super.key});
+class BookLIstItem extends StatelessWidget {
+  const BookLIstItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,18 +22,18 @@ class HomePageBestSellerLIstItem extends StatelessWidget {
           child: const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-               Text(
+              Text(
                 'Harry Potter \nand the Goblet of Fire',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
-               Text('J.K.Rowling',
+              Text('J.K.Rowling',
                   style: TextStyle(fontSize: 16, color: Colors.grey)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                   Text('19.9\$',
+                  Text('19.9\$',
                       style: TextStyle(fontSize: 16, color: Colors.white)),
                   BookRating(),
                 ],
@@ -64,5 +45,3 @@ class HomePageBestSellerLIstItem extends StatelessWidget {
     );
   }
 }
-
-
