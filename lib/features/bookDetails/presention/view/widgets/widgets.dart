@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class CustomBookDetailsAppbar extends StatelessWidget {
@@ -12,8 +11,9 @@ class CustomBookDetailsAppbar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
-            onPressed: () {},
-          icon:const Icon(Icons.close, size: 24),),
+          onPressed: () {},
+          icon: const Icon(Icons.close, size: 24),
+        ),
         IconButton(
             onPressed: () {},
             icon: const Icon(Icons.shopping_cart_outlined, size: 28)),
@@ -21,15 +21,15 @@ class CustomBookDetailsAppbar extends StatelessWidget {
     );
   }
 }
+
 class bookPreviewButton extends StatelessWidget {
   const bookPreviewButton({
     super.key,
   });
 
-
   @override
   Widget build(BuildContext context) {
-      final double w = MediaQuery.of(context).size.width;
+    final double w = MediaQuery.of(context).size.width;
 
     return SizedBox(
       width: w * 0.7,
@@ -37,7 +37,7 @@ class bookPreviewButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Expanded(
-            child: ElevatedButton(
+            child: TextButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
@@ -58,7 +58,7 @@ class bookPreviewButton extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: ElevatedButton(
+            child: TextButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xffEF8262),
@@ -83,4 +83,3 @@ class bookPreviewButton extends StatelessWidget {
     );
   }
 }
-

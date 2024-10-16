@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/customAppBar.dart';
 import 'package:bookly_app/features/home/presention/views/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
