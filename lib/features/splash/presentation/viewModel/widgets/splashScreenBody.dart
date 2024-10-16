@@ -1,5 +1,5 @@
 import 'package:bookly_app/core/utils/assets.dart';
-import 'package:bookly_app/features/home/presention/views/homeScreen.dart';
+import 'package:bookly_app/features/homeSCreen/presention/views/homeScreen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreenBody extends StatefulWidget {

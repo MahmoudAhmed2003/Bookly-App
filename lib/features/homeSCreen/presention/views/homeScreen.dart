@@ -1,7 +1,6 @@
 import 'package:bookly_app/core/utils/customAppBar.dart';
-import 'package:bookly_app/features/home/presention/views/widgets/widgets.dart';
+import 'package:bookly_app/features/homeSCreen/presention/views/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});
@@ -36,7 +35,7 @@ class Homescreen extends StatelessWidget {
                         },
                       ),
                     ),
-                  
+
                     const SizedBox(height: 40),
                     const Text('Best Sellers',
                         style: TextStyle(
