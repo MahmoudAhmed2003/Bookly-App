@@ -18,7 +18,3 @@ class HomePageRecentListItem extends StatelessWidget {
     );
   }
 }
-
-
-
-

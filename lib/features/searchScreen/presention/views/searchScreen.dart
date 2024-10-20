@@ -29,17 +29,19 @@ class SearchScreen extends StatelessWidget {
               SizedBox(
                 height: h * 0.02,
               ),
-              ListView.builder(
-                padding: EdgeInsets.zero,
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.symmetric(vertical: h * 0.01),
-                    child: const BookLIstItem(),
-                  );
-                },
+              Expanded(
+                child: ListView.builder(
+                  padding: EdgeInsets.zero,
+
+                  // shrinkWrap: true,
+                  itemCount: 8,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.symmetric(vertical: h * 0.01),
+                      child: const BookLIstItem(),
+                    );
+                  },
+                ),
               )
             ],
           ),
