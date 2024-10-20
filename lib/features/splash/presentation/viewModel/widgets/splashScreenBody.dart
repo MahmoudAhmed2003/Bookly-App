@@ -1,5 +1,5 @@
 import 'package:bookly_app/core/utils/assets.dart';
-import 'package:bookly_app/features/homeSCreen/presention/views/homeScreen.dart';
+import 'package:bookly_app/features/homeScreen/presention/views/homeScreen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreenBody extends StatefulWidget {
@@ -24,13 +24,13 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
   }
 
   void initAnimation() {
-     animationController = AnimationController(
+    animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1500),
     );
     slidingAnimation = Tween<Offset>(begin: Offset(0, 20), end: Offset(0, 0))
         .animate(animationController);
-    
+
     animationController.forward();
   }
 

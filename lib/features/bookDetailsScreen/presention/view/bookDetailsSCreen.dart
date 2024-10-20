@@ -2,7 +2,7 @@ import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/bookRating.dart';
 import 'package:bookly_app/core/utils/customBookPic.dart';
 import 'package:bookly_app/features/bookDetailsScreen/presention/view/widgets/widgets.dart';
-import 'package:bookly_app/features/homeSCreen/presention/views/widgets/widgets.dart';
+import 'package:bookly_app/features/homeScreen/presention/views/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
