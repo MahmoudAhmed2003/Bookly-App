@@ -14,7 +14,7 @@ class Homerepoimpl extends Homerepo {
     try {
       final data = await apiservice.get(
           endPoint:
-              'volumes?q=subject:programming&Filtering=free-ebooks&download=epub&sorting=newest');
+              'volumes?q=subject:programming&Filtering=free-ebooks&download=epub');
       List<BooksModel> books = [];
       for (var item in data['items']) {
         books.add(BooksModel.fromJson(item));
