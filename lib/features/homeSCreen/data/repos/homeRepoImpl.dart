@@ -20,19 +20,30 @@ class Homerepoimpl extends Homerepo {
         books.add(BooksModel.fromJson(item));
       }
       return Right(books);
-    } catch (e ) {
-      if(e is DioException){
-              return Left(ServerFailure.fromDioExp(e));
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioExp(e));
       }
-        return Left(ServerFailure(e.toString()));
-
-      
+      return Left(ServerFailure(e.toString()));
     }
   }
 
   @override
-  Future<Either<Failure, List<BooksModel>>> getFeaturedBooks() {
-    // TODO: implement getFeaturedBooks
-    throw UnimplementedError();
+  Future<Either<Failure, List<BooksModel>>> getFeaturedBooks() async {
+    try {
+      final data = await apiservice.get(
+          endPoint:
+              'volumes?q=subject:programming&Filtering=free-ebooks&download=epub');
+      List<BooksModel> books = [];
+      for (var item in data['items']) {
+        books.add(BooksModel.fromJson(item));
+      }
+      return Right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioExp(e));
+      }
+      return Left(ServerFailure(e.toString()));
+    }
   }
 }
