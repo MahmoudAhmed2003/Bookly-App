@@ -18,10 +18,10 @@ final class FeaturedBooksSuccess extends FeaturedBooksState {
 
  
 }
-final class FeaturedBooksFailed extends FeaturedBooksState {
+final class FeaturedBooksFailure extends FeaturedBooksState {
   final String message;
 
-  const FeaturedBooksFailed({
+  const FeaturedBooksFailure({
     required this.message,
   });
 
