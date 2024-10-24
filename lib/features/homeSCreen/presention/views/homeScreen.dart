@@ -1,7 +1,13 @@
 import 'package:bookly_app/core/utils/bookListItem.dart';
 import 'package:bookly_app/core/utils/customAppBar.dart';
+import 'package:bookly_app/features/homeScreen/presention/ViewModel/featuredBooksCubit/featured_books_cubit.dart';
+import 'package:bookly_app/features/homeScreen/presention/ViewModel/newestBooksCubit/newest_books_cubit.dart';
+import 'package:bookly_app/features/homeScreen/presention/views/widgets/bestSellers.dart';
+import 'package:bookly_app/features/homeScreen/presention/views/widgets/featuredBooksList.dart';
 import 'package:bookly_app/features/homeScreen/presention/views/widgets/widgets.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});
@@ -20,21 +26,25 @@ class Homescreen extends StatelessWidget {
                 padding: EdgeInsets.only(left: w * 0.04),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // const HomePageListViewItem(),
-                    SizedBox(
-                      height: h * 0.2,
-                      child: ListView.builder(
-                        padding: EdgeInsets.zero,
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 5,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: EdgeInsets.only(right: w * 0.05),
-                            child: const HomePageRecentListItem(),
+                  children: [ 
+                    BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
+                      builder: (context, state) {
+                        if (state is FeaturedBooksSuccess) {
+                          return FeaturedBooksList(
+                              h: h, w: w, booksList: state.books);
+                        } else if (state is FeaturedBooksLoading) {
+                          return const Center(
+                            child: CircularProgressIndicator(),
                           );
-                        },
-                      ),
+                        } else if (state is FeaturedBooksFailure) {
+                          return Center(
+                            child: Text(state.message),
+                          );
+                        }
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      },
                     ),
 
                     const SizedBox(height: 40),
@@ -42,18 +52,24 @@ class Homescreen extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold)),
 
-                    ListView.builder(
-                      padding: EdgeInsets.zero,
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: 5,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: EdgeInsets.symmetric(vertical: h * 0.01),
-                          child: const BookLIstItem(),
+                    BlocBuilder<NewestBooksCubit, NewestBooksState>(
+                      builder: (context, state) {
+                        if (state is NewestBooksSuccess) {
+                          return BestSellersList(bookData: state.books, h: h);
+                        } else if (state is NewestBooksLoading) {
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        } else if (state is NewestBooksFailure) {
+                          return Center(
+                            child: Text(state.errMessage),
+                          );
+                        }
+                        return const Center(
+                          child: CircularProgressIndicator(),
                         );
                       },
-                    )
+                    ),
                   ],
                 ),
               ),

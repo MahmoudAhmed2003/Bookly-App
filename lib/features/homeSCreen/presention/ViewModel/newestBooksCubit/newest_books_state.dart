@@ -8,18 +8,18 @@ sealed class NewestBooksState extends Equatable {
 }
 
 final class NewestBooksInitial extends NewestBooksState {}
-final class NewestBooksFailure extends NewestBooksState {
 
-  const NewestBooksFailure({
-     required String errMessage
-  });
+final class NewestBooksFailure extends NewestBooksState {
+  const NewestBooksFailure({required this.errMessage});
+  final String errMessage;
 }
+
 final class NewestBooksLoading extends NewestBooksState {}
+
 final class NewestBooksSuccess extends NewestBooksState {
-  final List<BooksModel> books;
+  final BooksModel books;
 
   const NewestBooksSuccess({
     required this.books,
   });
-
 }

@@ -3,9 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BookRating extends StatelessWidget {
   const BookRating({
+    required this.pageCount,
     super.key,
   });
-
+  final String pageCount;
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
@@ -21,8 +22,8 @@ class BookRating extends StatelessWidget {
         SizedBox(
           width: w * 0.01,
         ),
-        const Text((' (2390)'),
-            style: TextStyle(fontSize: 16, color: Colors.grey))
+         Text((' ($pageCount)'),
+            style: const TextStyle(fontSize: 16, color: Colors.grey))
       ],
     );
   }
