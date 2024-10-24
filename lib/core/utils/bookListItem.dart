@@ -18,8 +18,8 @@ class BookLIstItem extends StatelessWidget {
         SizedBox(
             height: h * 0.13,
             width: w * 0.2,
-            child:
-                BookPic(imageUrl: bookData.volumeInfo!.imageLinks!.thumbnail)),
+            child: BookPic(
+                w: w, imageUrl: bookData.volumeInfo!.imageLinks!.thumbnail)),
         SizedBox(
           width: w * 0.04,
         ),
@@ -30,7 +30,8 @@ class BookLIstItem extends StatelessWidget {
             children: [
               Text(
                 bookData.volumeInfo!.title.toString(),
-                style:const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),

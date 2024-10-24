@@ -16,8 +16,9 @@ class HomePageRecentListItem extends StatelessWidget {
     return SizedBox(
       // color: Colors.white,
 
-      width: w * 0.35,
-      child: BookPic(imageUrl: bookData.volumeInfo!.imageLinks!.thumbnail!),
+      // width: w * 0.32,
+      child:
+          BookPic(w: w, imageUrl: bookData.volumeInfo!.imageLinks!.thumbnail!),
     );
   }
 }
