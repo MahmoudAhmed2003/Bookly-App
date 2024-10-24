@@ -5,6 +5,7 @@ import 'package:bookly_app/features/homeScreen/data/repos/homeRepoImpl.dart';
 import 'package:bookly_app/features/homeScreen/presention/ViewModel/featuredBooksCubit/featured_books_cubit.dart';
 import 'package:bookly_app/features/homeScreen/presention/ViewModel/newestBooksCubit/newest_books_cubit.dart';
 import 'package:bookly_app/features/homeScreen/presention/views/homeScreen.dart';
+import 'package:bookly_app/features/splash/presentation/viewModel/splashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,10 +22,12 @@ class BooklyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => FeaturedBooksCubit(getIt.get<Homerepoimpl>()),
+          create: (context) =>
+              FeaturedBooksCubit(getIt.get<Homerepoimpl>())..getFeaturedBooks(),
         ),
         BlocProvider(
-          create: (context) => NewestBooksCubit(getIt.get<Homerepoimpl>()),
+          create: (context) =>
+              NewestBooksCubit(getIt.get<Homerepoimpl>())..getNewestBooks(),
         )
       ],
       child: MaterialApp(
@@ -33,7 +36,7 @@ class BooklyApp extends StatelessWidget {
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: Color(0xff100B20),
         ),
-        home: const Homescreen(),
+        home: SplashScreen(),
       ),
     );
   }

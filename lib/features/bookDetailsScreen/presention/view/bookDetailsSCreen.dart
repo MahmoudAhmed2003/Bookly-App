@@ -36,7 +36,9 @@ class Bookdetailsscreen extends StatelessWidget {
                         ),
                         SizedBox(
                           height: h * 0.3,
-                          child: const BookPic(),
+                          child: const BookPic(
+                            imageUrl: '',
+                          ),
                         ),
                         SizedBox(
                           height: h * 0.04,
@@ -61,7 +63,7 @@ class Bookdetailsscreen extends StatelessWidget {
                         SizedBox(
                           height: h * 0.02,
                         ),
-                        const BookRating(),
+                        const BookRating(pageCount: ''),
                         SizedBox(
                           height: h * 0.02,
                         ),
@@ -97,7 +99,9 @@ class Bookdetailsscreen extends StatelessWidget {
                             child: SizedBox(
                               // color: Colors.white,
                               width: w * 0.2,
-                              child: const BookPic(),
+                              child: const BookPic(
+                                imageUrl: '',
+                              ),
                             ),
                           );
                         },
