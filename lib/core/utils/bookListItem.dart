@@ -17,7 +17,7 @@ class BookLIstItem extends StatelessWidget {
     final w = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRoutes.detailsScreenRout,extra: bookData);
+        GoRouter.of(context).push(AppRoutes.detailsScreenRout, extra: bookData);
       },
       child: Row(
         children: [
@@ -50,7 +50,7 @@ class BookLIstItem extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text('0.0\$',
+                    const Text('Free',
                         style: TextStyle(fontSize: 16, color: Colors.white)),
                     BookRating(
                         pageCount: bookData.volumeInfo!.pageCount.toString()),

@@ -15,6 +15,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Bookdetailsscreen extends StatefulWidget {
   const Bookdetailsscreen({super.key, required this.bookData});
@@ -102,7 +103,17 @@ class _BookdetailsscreenState extends State<Bookdetailsscreen> {
                         SizedBox(
                           height: h * 0.02,
                         ),
-                        const bookPreviewButton(),
+                        bookPreviewButton(
+                          onPressed: () async {
+                            
+                            if (!await launchUrl(Uri.parse(widget
+                                .bookData.volumeInfo!.previewLink
+                                .toString()??''))) {
+                              throw Exception(
+                                  'Could not launch ${widget.bookData.volumeInfo!.previewLink}');
+                            }
+                          },
+                        )
                       ],
                     ),
                   ),
@@ -130,7 +141,7 @@ class _BookdetailsscreenState extends State<Bookdetailsscreen> {
                             child: ListView.builder(
                               padding: EdgeInsets.zero,
                               scrollDirection: Axis.horizontal,
-                              itemCount: state.books.items!.length, 
+                              itemCount: state.books.items!.length,
                               itemBuilder: (context, index) {
                                 return Padding(
                                   padding: EdgeInsets.only(right: w * 0.03),
