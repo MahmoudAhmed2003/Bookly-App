@@ -24,8 +24,10 @@ class CustomBookDetailsAppbar extends StatelessWidget {
 
 class bookPreviewButton extends StatelessWidget {
   const bookPreviewButton({
+    required this.onPressed,
     super.key,
   });
+  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +51,7 @@ class bookPreviewButton extends StatelessWidget {
                 ),
               ),
               child: const Text(
-                '19.99€',
+                'Get For Free',
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
@@ -59,7 +61,7 @@ class bookPreviewButton extends StatelessWidget {
           ),
           Expanded(
             child: TextButton(
-              onPressed: () {},
+              onPressed: onPressed,
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xffEF8262),
                 shape: const RoundedRectangleBorder(

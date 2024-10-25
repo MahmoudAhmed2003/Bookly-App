@@ -16,7 +16,7 @@ class DetailsRepoImpl extends DetailsRepo {
     try {
       final data = await apiservice.get(
           endPoint:
-              'volumes?q=subject:programming&download=epub&sorting=relevance');
+              'volumes?q=subject:$category&download=epub&sorting=relevance');
       BooksModel books;
       // log('data= ' + data.toString());
       books = BooksModel.fromJson(data);
