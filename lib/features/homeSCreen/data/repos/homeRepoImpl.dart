@@ -7,7 +7,7 @@ import 'package:bookly_app/features/homeScreen/data/repos/homeRepo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-class Homerepoimpl extends Homerepo {
+class Homerepoimpl extends HomeRepo {
   final Apiservice apiservice;
   Homerepoimpl(this.apiservice);
 
@@ -49,23 +49,4 @@ class Homerepoimpl extends Homerepo {
     }
   }
 
-  @override
-  Future<Either<Failure, BooksModel>> getSimilardBooks(
-      {required String category}) async {
-    try {
-      final data = await apiservice.get(
-          endPoint:
-              'volumes?q=subject:programming&Filtering=free-ebooks&download=epub&sorting=relevance');
-      BooksModel books;
-      // log('data= ' + data.toString());
-      books = BooksModel.fromJson(data);
-
-      return Right(books);
-    } catch (e) {
-      if (e is DioException) {
-        return Left(ServerFailure.fromDioExp(e));
-      }
-      return Left(ServerFailure(e.toString()));
-    }
-  }
 }

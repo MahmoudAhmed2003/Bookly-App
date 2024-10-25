@@ -1,6 +1,7 @@
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/features/homeScreen/presention/views/homeScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashScreenBody extends StatefulWidget {
   const SplashScreenBody({super.key});
@@ -36,19 +37,8 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
 
   void navigateToHomeScreen() {
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) =>
-              const Homescreen(),
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            return FadeTransition(
-              opacity: animation,
-              child: child,
-            );
-          },
-        ),
-      );
+      GoRouter.of(context).push('/homeScreen');
+     
     });
   }
 

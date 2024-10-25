@@ -1,6 +1,8 @@
+import 'package:bookly_app/core/utils/appRoutes.dart';
 import 'package:bookly_app/features/homeScreen/data/models/booksModel/books_model.dart';
-import 'package:bookly_app/features/homeScreen/presention/views/widgets/widgets.dart';
+import 'package:bookly_app/features/homeScreen/presention/views/widgets/resentBooksItem.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class FeaturedBooksList extends StatelessWidget {
   const FeaturedBooksList({
@@ -25,7 +27,13 @@ class FeaturedBooksList extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: EdgeInsets.only(right: w * 0.05),
-            child: HomePageRecentListItem(bookData: booksList.items![index]),
+            child: GestureDetector(
+                onTap: () {
+                  GoRouter.of(context).push(AppRoutes.detailsScreenRout,
+                      extra: booksList.items![index]);
+                },
+                child:
+                    HomePageRecentListItem(bookData: booksList.items![index])),
           );
         },
       ),
