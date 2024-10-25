@@ -106,8 +106,10 @@ class _BookdetailsscreenState extends State<Bookdetailsscreen> {
                         bookPreviewButton(
                           onPressed: () async {
                             
+                            
                             if (!await launchUrl(Uri.parse(widget
                                 .bookData.volumeInfo!.previewLink
+
                                 .toString()??''))) {
                               throw Exception(
                                   'Could not launch ${widget.bookData.volumeInfo!.previewLink}');
