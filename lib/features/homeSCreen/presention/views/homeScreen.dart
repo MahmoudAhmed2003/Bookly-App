@@ -6,8 +6,8 @@ import 'package:bookly_app/features/homeScreen/presention/views/widgets/featured
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class Homescreen extends StatelessWidget {
-  const Homescreen({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
