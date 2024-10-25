@@ -37,7 +37,7 @@ class Bookdetailsscreen extends StatelessWidget {
                         SizedBox(
                           height: h * 0.3,
                           child: const BookPic(
-                            w:2,
+                            w: 2,
                             imageUrl: '',
                           ),
                         ),
@@ -101,8 +101,8 @@ class Bookdetailsscreen extends StatelessWidget {
                               // color: Colors.white,
                               width: w * 0.2,
                               child: const BookPic(
-                                w:0,
-                                imageUrl: '',
+                                w: 0,
+                                imageUrl: 'https://nti.sci.eg/images/logo.png',
                               ),
                             ),
                           );

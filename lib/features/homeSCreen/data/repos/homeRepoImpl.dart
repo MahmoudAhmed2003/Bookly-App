@@ -33,10 +33,31 @@ class Homerepoimpl extends Homerepo {
   @override
   Future<Either<Failure, BooksModel>> getFeaturedBooks() async {
     try {
-      final data =
-          await apiservice.get(endPoint: 'volumes?q=subject:programming&Filtering=free-ebooks&download=epub&sorting=featured');
+      final data = await apiservice.get(
+          endPoint:
+              'volumes?q=subject:programming&Filtering=free-ebooks&download=epub&sorting=featured');
       BooksModel books;
       log('data= ' + data.toString());
+      books = BooksModel.fromJson(data);
+
+      return Right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioExp(e));
+      }
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, BooksModel>> getSimilardBooks(
+      {required String category}) async {
+    try {
+      final data = await apiservice.get(
+          endPoint:
+              'volumes?q=subject:programming&Filtering=free-ebooks&download=epub&sorting=relevance');
+      BooksModel books;
+      // log('data= ' + data.toString());
       books = BooksModel.fromJson(data);
 
       return Right(books);
