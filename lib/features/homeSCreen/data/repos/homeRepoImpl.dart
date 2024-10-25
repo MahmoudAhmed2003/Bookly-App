@@ -16,7 +16,7 @@ class Homerepoimpl extends Homerepo {
     try {
       final data = await apiservice.get(
           endPoint:
-              'volumes?q=subject:programming&Filtering=free-ebooks&download=epub&sorting=newest');
+              'volumes?q=subject:computer Science&Filtering=free-ebooks&download=epub&sorting=newest');
       BooksModel books;
 
       books = BooksModel.fromJson(data);
@@ -33,9 +33,8 @@ class Homerepoimpl extends Homerepo {
   @override
   Future<Either<Failure, BooksModel>> getFeaturedBooks() async {
     try {
-      final data = await apiservice.get(
-          endPoint:
-              'volumes?q=subject:programming&Filtering=free-ebooks&download=epub');
+      final data =
+          await apiservice.get(endPoint: 'volumes?q=subject:programming&Filtering=free-ebooks&download=epub&sorting=featured');
       BooksModel books;
       log('data= ' + data.toString());
       books = BooksModel.fromJson(data);

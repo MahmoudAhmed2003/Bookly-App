@@ -1,11 +1,10 @@
-
 import 'package:bookly_app/core/utils/bookListItem.dart';
 import 'package:bookly_app/features/homeScreen/data/models/booksModel/books_model.dart';
 import 'package:bookly_app/features/homeScreen/data/models/booksModel/item.dart';
 import 'package:flutter/material.dart';
 
-class BestSellersList extends StatelessWidget {
-  const BestSellersList({
+class NewestBooksListView extends StatelessWidget {
+  const NewestBooksListView({
     super.key,
     required this.bookData,
     required this.h,
@@ -22,10 +21,8 @@ class BestSellersList extends StatelessWidget {
       itemCount: bookData.items!.length,
       itemBuilder: (context, index) {
         return Padding(
-          padding:
-              EdgeInsets.symmetric(vertical: h * 0.01),
-          child: BookLIstItem(
-              bookData: bookData.items![index]),
+          padding: EdgeInsets.symmetric(vertical: h * 0.01),
+          child: BookLIstItem(bookData: bookData.items![index]),
         );
       },
     );
