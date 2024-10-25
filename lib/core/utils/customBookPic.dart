@@ -9,7 +9,7 @@ class BookPic extends StatelessWidget {
     required this.w,
     super.key,
   });
-  final imageUrl;
+  final String imageUrl;
   final double w;
 
   @override

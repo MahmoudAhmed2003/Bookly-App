@@ -19,7 +19,7 @@ class BookLIstItem extends StatelessWidget {
             height: h * 0.13,
             width: w * 0.2,
             child: BookPic(
-                w: w, imageUrl: bookData.volumeInfo!.imageLinks!.thumbnail)),
+                w: w, imageUrl: bookData.volumeInfo!.imageLinks!.thumbnail.toString())),
         SizedBox(
           width: w * 0.04,
         ),
