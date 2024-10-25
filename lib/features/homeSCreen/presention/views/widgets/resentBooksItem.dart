@@ -17,8 +17,11 @@ class HomePageRecentListItem extends StatelessWidget {
       // color: Colors.white,
 
       // width: w * 0.32,
-      child:
-          BookPic(w: w, imageUrl: bookData.volumeInfo!.imageLinks!.thumbnail!),
+      child: BookPic(
+          w: w,
+          imageUrl: bookData.volumeInfo!.imageLinks == null
+              ? ''
+              : bookData.volumeInfo!.imageLinks!.thumbnail.toString()),
     );
   }
 }

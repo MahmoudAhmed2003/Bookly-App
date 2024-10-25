@@ -7,7 +7,7 @@ import 'package:bookly_app/features/homeScreen/data/repos/homeRepo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-class Homerepoimpl extends Homerepo {
+class Homerepoimpl extends HomeRepo {
   final Apiservice apiservice;
   Homerepoimpl(this.apiservice);
 
@@ -16,7 +16,7 @@ class Homerepoimpl extends Homerepo {
     try {
       final data = await apiservice.get(
           endPoint:
-              'volumes?q=subject:programming&Filtering=free-ebooks&download=epub&sorting=newest');
+              'volumes?q=subject:computer Science&Filtering=free-ebooks&download=epub&sorting=newest');
       BooksModel books;
 
       books = BooksModel.fromJson(data);
@@ -35,7 +35,7 @@ class Homerepoimpl extends Homerepo {
     try {
       final data = await apiservice.get(
           endPoint:
-              'volumes?q=subject:programming&Filtering=free-ebooks&download=epub');
+              'volumes?q=subject:programming&Filtering=free-ebooks&download=epub&sorting=featured');
       BooksModel books;
       log('data= ' + data.toString());
       books = BooksModel.fromJson(data);
@@ -48,4 +48,5 @@ class Homerepoimpl extends Homerepo {
       return Left(ServerFailure(e.toString()));
     }
   }
+
 }
