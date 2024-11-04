@@ -1,16 +1,34 @@
-# bookly_app
+# Bookly - Book Viewer and Downloader
 
-A new Flutter project.
+**Bookly** is a Flutter application that allows users to search, view, and download books using the Google Books API. The app is built on the MVVM architecture using Cubit for state management and Dio for handling network requests.
+
+## Features
+
+- **Search Books**: Search for books by title, author, or keywords.
+- **View Book Details**: Display detailed information about each book.
+- **Download Books**: Download book links if they are available.
+
+## Technologies Used
+
+- Flutter
+- Dart
+- Google Books API
+- Dio (for HTTP requests)
+- Cubit (for state management)
+- MVVM architecture
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter SDK
+- Dart SDK
+- An IDE like Android Studio or Visual Studio Code
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your_username/bookly.git
+   cd bookly
